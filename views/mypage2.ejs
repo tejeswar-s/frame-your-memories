@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Frame Your Memories</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="mypage2.js"></script>
+<link rel="stylesheet" href="mypage2.css">
+<script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+.header2{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 2px;
+}
+
+.header2 .fa-solid{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size:20px ;
+    color: black;
+    background: grey;
+    cursor: pointer;
+}
+
+.header2 span{
+    background: linear-gradient(to right ,rgb(241, 238, 34),rgb(236, 226, 176),rgb(224, 221, 39));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    height: 100%;
+    line-height: 40px;
+}
+
+.header2 .fa-solid:hover{
+    color: white;
+    background: grey;
+}
+
+.footer{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right,#00093c,#2d0b00);
+    color: white;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size:13px;
+    line-height: 20px;
+    
+}
+
+.row{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+}
+
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+    text-align: center;
+    margin: 0px;
+}
+
+.logo{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.col a{
+    text-decoration: none;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.col a:hover{
+    color: grey;
+    border-bottom: 1px solid grey;
+}
+
+.email{
+    width: fit-content;
+    border-bottom: 1px solid white;
+    margin: 20px 0;
+    align-self: center;
+}
+
+.col>.email{
+    text-align: center;
+}
+
+.social-icons .fa-solid{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size:20px ;
+    color: black;
+    background: white;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.social-icons .fa-brands{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size:20px ;
+    color: black;
+    background: white;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+#connect a:hover{
+    border: none;
+}
+
+.flex1{
+    width: 100%;
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+   
+}
+
+.flex1 img{
+    display: block;
+    width:90%;
+    height: auto;
+    margin: auto;
+    /* box-shadow:0px 5px 5px #2d0b00; */
+}
+
+.info{
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin: 10px;
+    background: linear-gradient(to right ,rgb(151,105,45),rgb(217,203,130),rgb(151,105,45));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.flex1 b{
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+}
+
+
+
+</style>
+</head>
+<body class=" light-grey  content" style="max-width:1600px">
+
+  <div class="header2" style="position: fixed; top: 0; left: 0; right: 0; ">
+    <a href="/customerinterface1" id="prev"><i class="fa-solid fa-arrow-left"></i></a>
+    <span style="color:white">Frame Your Memories</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class=" sidebar collapse animate-left sinky" style="z-index:3;width:300px; margin-top: -6px;" id="mySidebar"><br>
+  <div class=" container">
+    <a href="#" onclick="w3_close()" class=" hide-large  right  jumbo  padding  hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img src="images/profileabout.png" style="width:45%; position: relative; left: 25%;" class=" round"><br><br>
+    <h4><b><%=name%></b></h4>
+    <p class=" text-grey">FRAME YOUR MEMORIES</p>
+  </div>
+  <div class=" bar-block">
+    <a href="/edit_profile" onclick="w3_close()" class=" bar-item  button  padding  text-teal"><i class="	fa fa-pencil-square-o fa-fw  margin-right"></i>EDIT PROFILE</a> 
+    <a href="/change_password" onclick="w3_close()" class=" bar-item  button  padding  text-teal"><i class=" fa fa-unlock-alt fa-fw  margin-right"></i>CHANGE PASSWORD</a> 
+    <a href="/customerentirecart" onclick="w3_close()" class=" bar-item  button  padding  text-teal"><i class="fa fa-th-large fa-fw  margin-right"></i>CART</a> 
+    <!-- <a href="/payment1" onclick="w3_close()" class="bar-item button padding text-teal"><i class=" fa fa-credit-card fa-fw margin-right"></i> PAYMENTS</a> -->
+    <a href="/customerentirewishlist" onclick="w3_close()" class=" bar-item  button  padding  text-teal"><i class="fa far fa-heart fa-fw  margin-right"></i>WISHLIST</a>
+    <a href="/customerentirebookings" onclick="w3_close()" class=" bar-item  button  padding  text-teal"><i class="fa far fa-heart fa-fw  margin-right"></i>BOOKINGS</a>
+    <a href="/AboutUs" onclick="w3_close()" class=" bar-item  button  padding"><i class="fa fa-user fa-fw  margin-right"></i>ABOUT</a> 
+    <a href="/ContactUs" onclick="w3_close()" class=" bar-item  button  padding"><i class="fa fa-envelope fa-fw  margin-right"></i>CONTACT</a>
+    <a href="/customerlogout" onclick="w3_close()" class=" bar-item  button  padding"><i class="fa fa-sign-out fa-fw margin-right" ></i>LOGOUT</a>
+  </div>
+
+  <!-- Social Media Symbols -->
+  <div class=" panel  large">
+    <i class="fa fa-facebook-official  hover-opacity"></i>
+    <i class="fa fa-instagram  hover-opacity"></i>
+    <i class="fa fa-snapchat  hover-opacity"></i>
+    <i class="fa fa-pinterest-p  hover-opacity"></i>
+    <i class="fa fa-twitter  hover-opacity"></i>
+    <i class="fa fa-linkedin  hover-opacity"></i>
+  </div>
+  
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class=" overlay  hide-large  animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class=" main" style="margin-left:300px; margin-top: 50px;">
+
+  <!-- Header -->
+  <header id="portfolio">
+    <a href="#"><img src="images/profileabout.png" style="width:65px;" class=" circle  right  margin  hide-large  hover-opacity"></a>
+    <span class=" button  hide-large  xxlarge  hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class=" container">
+    <h1><b>MY PROFILE</b></h1>
+    
+  </header>
+
+  <div>
+    <img src="images/pro_img.jpg" alt="main image" style="width:100%">
+  </div>
+<!-- footer -->
+
+<div class="footer">
+  <div class="row">
+      <div class="col">
+          <img src="/images/footerlogo.png"class="logo">
+          <p>-Give Your Guest A Reason To Stay</p>
+      </div>
+      <div class="col">
+          <h2>Information</h2><br>
+          <a href="#"><b>FAQs</b></a><br>
+          <a href="#"><b>Careers</b></a><br>
+          <a href="#"><b>Security</b></a>
+      </div>
+      <div class="col">
+          <h2>Connect with Us</h2><br>
+              <a href="/help_center"><b>Help</b></a><br>
+              <a href="/contactus"><b>Contact Us</b></a>
+      </div>
+      <div class="col">
+          <h2>Company</h2><br>
+          <a href="#"><b>Our Story</b></a><br>
+          <a href="#"><b>Terms and Conditions</b></a><br>
+          <a href="#"><b>Become a Wholesaler</b></a><br>
+          <a href="#"><b>Privacy Policy</b></a><br>
+      </div>
+      <div class="col">
+          <h2>Office</h2><br>
+          <p>NH-5 road,near ISUZU</p>
+          <p>Sricity, Chittor</p>
+          <p>AndhraPradesh, PIN 524366, India</p>
+          <h4>+91 0000000000</h4>
+          <p class="email">example@gmail.com</p>
+      </div>
+
+      
+      <div class="col" id="connect">
+          <div class="social-icons">
+              <a href="https://www.gmail.com"><i class="fa-solid fa-envelope"></i></a>
+              <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/accounts/login/"><i class="fa-brands fa-square-instagram"></i></a>
+              <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+              <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+      </div>
+  </div>
+  <hr>
+  <p>&copy</p>
+</div>
+
+<script>
+  const back= document.getElementById("prev")
+back.addEventListener("click",(event)=>{
+    event.preventDefault();
+    window.location.href="/customerinterface1";
+})
+</script>
+
+</body>
+</html>

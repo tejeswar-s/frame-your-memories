@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Interface 2</title>
+    <link rel="stylesheet" href="businessinterface2.css">
+
+</head>
+<body>
+    <div class="maincon">
+        <header>
+            <div class="mainheader">
+                <div style="font-size: 1.5rem;" class="box1">
+                    <a style="text-decoration: none;color: white;" href="/frameyourmemories">FRAME YOUR MEMORIES</a>
+                </div>
+                <div class="box2">
+                    <ul>
+                        <li><a href="/businessinterface1" style="text-transform: uppercase;"><% if(user){ %>
+                            Welcome <%=user %> 
+                        <% } %>
+                        <li><a href="/businessinterface2">CATEGORY</a></li>
+                        <!-- <li><a href="">SERVICES</a></li> -->
+                        <li><a href="/businessallproducts">PRODUCTS</a></li>
+                        <li><a href="/businesslocation">LOCATIONS</a></li>
+                        <li ><a href="/businesslogout">LOG OUT</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div style="text-align: center;color: darkolivegreen;"><h3>Start Your Journey...</h3></div>
+        <form action="/businessinterface3" method="post" id="myform">
+            <div class="maincontainer">
+                <div class="catagories">
+                    <div class="catagory" data-id
+                    ="0">Events</div>
+                    <div class="catagory" data-id
+                    ="1">Photography</div>
+                    <div class="catagory" data-id
+                    ="2">Food</div>
+                    
+                </div>
+                <div class="subcatagories">
+                    <div class="eventsubcatagories" data-id="0">
+
+                            <% events.forEach(subevent=>{%>
+
+                                <span><input value="event <%=subevent  %>" type="checkbox" name="event <%=subevent  %>" id="<%=subevent  %>" class="span">
+                                    <label for="<%=subevent  %>" ><%=subevent  %></label></span>
+
+                            <% }) %>
+                        
+                        
+                    </div>
+                    <div style="display: none;" class="photographysubcatagories" data-id="1">
+                        
+                        <% photography.forEach(photosub=>{%>
+
+                            <span><input value="photo <%=photosub  %>" type="checkbox" name="photo <%=photosub  %>" id="<%=photosub  %>" class="span">
+                                <label for="<%=photosub  %>" ><%=photosub  %></label></span>
+
+                        <% }) %>
+                        
+                    </div>
+                    <div style="display: none;" class="foodsubcatagories" data-id="2">
+                        
+                        <% food.forEach(foodtype=>{%>
+
+                            <span><input value="food <%=foodtype  %>" type="checkbox" name="food <%=foodtype  %>" id="<%=foodtype  %>" class="span">
+                                <label for="<%=foodtype  %>" ><%=foodtype  %></label></span>
+
+                        <% }) %>
+
+                    </div>
+                    
+                </div>
+                <button style="margin: 10px;padding:5px 8px;width: 80px;" disabled>submit</button>
+            </div>
+        </form>
+        
+    </div>
+    <script src="businessinterface2.js"></script>
+</body>
+</html>

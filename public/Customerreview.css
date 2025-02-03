@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background-image: url("reviewback.jpg");
+  background-size: cover;
+  background-repeat: none;
+  width: 100%;
+}
+
+.head{
+  text-align: center;
+}
+
+.post{
+  background-color: none;
+}
+
+.container{
+  position: relative;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .post{
+  display: none;
+}
+.container .text{
+  font-size: 25px;
+  color: #666666;
+  font-weight: 500;
+}
+
+.edit{
+  margin-top: 90px;
+  
+}
+.container .edit a{
+  font-size: 16px;
+  color: darkslategrey;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration:none ;
+  border: 2px solid darkslategrey;
+  border-radius: 5px;
+}
+
+
+.container .edit a:hover{
+  color: #1b1b1b;
+  border: 2px solid black;
+}
+.container .star-widget input{
+  display: none;
+}
+
+#images{
+    display: block;
+     position: relative;
+     background-color: rgb(247, 178, 52);
+     color: white;
+     font-size: 1.12em;
+     font-weight: 500;
+     text-align: center;
+     width: 80%;
+     padding: 1.12em 0;
+     margin-top: 15px;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: none;
+     float: none;
+     border-radius: 10px;
+     margin-left: 40px;
+    }
+
+.star-widget label {
+  font-size: 40px;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+  color: #fd4;
+}
+input:checked ~ label{
+  color: #fd4;
+}
+input#rate-5:checked ~ label{
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
+}
+#rate-1:checked ~  header:before{
+  content: "I just hate it ";
+}
+#rate-2:checked ~  header:before{
+  content: "I don't like it ";
+}
+#rate-3:checked ~  header:before{
+  content: "It is awesome ";
+}
+#rate-4:checked ~  header:before{
+  content: "I just like it ";
+}
+#rate-5:checked ~  header:before{
+  content: "I just love it ";
+}
+.container form{
+  display: block;
+}
+
+
+
+form header{
+  width: 100%;
+  font-size: 25px;
+  color: #fe7;
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+form .textarea{
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+form .textarea textarea{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #eee;
+  border: 1px solid #333;
+  background: #222;
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+.textarea textarea:focus{
+  border-color: #444;
+}
+form .btn{
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+form .btn button{
+  height: 100%;
+  width: 100%;
+  border: 1px solid #444;
+  outline: none;
+  background: #222;
+  color: #999;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: 20px;
+}
+form .btn button:hover{
+  background: #1b1b1b;
+}
+
+
+input[type="file"]{
+    display: none;
+  }
+  
+  
+
+ #form-data{
+    max-width: 300px;
+ }
+  
+  #result{
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .thumbnail{
+    height: 180px;
+    border-radius: 15px;
+  }
+  

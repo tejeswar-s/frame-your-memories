@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+} 
+
+body{
+    line-height: 1.5;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 2px;
+}
+
+.header .fa-solid{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size:20px ;
+    color: black;
+    background: grey;
+    cursor: pointer;
+    
+}
+
+.header span{
+    background: linear-gradient(to right ,rgb(241, 238, 34),rgb(236, 226, 176),rgb(224, 221, 39));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    height: 100%;
+    line-height: 40px;
+}
+
+.header .fa-solid:hover{
+    color: white;
+    background: grey;
+}
+
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.img-display{
+    overflow: hidden;
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+    min-width: 100%;
+}
+.img-select{
+    display: flex;
+}
+.img-item{
+    margin: 0.3rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+}
+.event-content{
+    padding: 2rem 1rem;
+}
+.event-title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+}
+.event-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+.event-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #256eff;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+    border-radius: 5px ;
+}
+.event-link:hover{
+    opacity: 0.9;
+}
+.event-rating{
+    color: #ffc107;
+}
+.event-rating span{
+    font-weight: 600;
+    color: #252525;
+}
+.event-price{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.event-price span{
+    font-weight: 400;
+}
+.last-price span{
+    color: #f64749;
+    /* text-decoration: line-through; */
+}
+.new-price span{
+    color: #256eff;
+}
+.event-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.event-detail p{
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+.event-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.event-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(shoes_images/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.event-detail ul li span{
+    font-weight: 400;
+}
+.booking-info{
+    margin: 1.5rem 0;
+}
+.booking-info input,
+.booking-info .addtocart,.booking-info .booknow,.booking-info .wish{
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+}
+.booking-info input{
+    width: 60px;
+}
+.booking-info .addtocart,.booking-info .booknow,.booking-info .wish{ 
+    cursor: pointer;
+    color: #fff;
+}
+.booking-info .addtocart{
+    background: #256eff;
+}
+.booking-info .booknow{
+    background-color: #ffc107;
+}
+.booking-info .wish{
+    background: #f64749;
+}
+.booking-info .addtocart:hover,.booking-info .booknow:hover,.booking-info .wish:hover{
+    opacity: 0.9;
+}
+.social-links{
+    display: flex;
+    align-items: center;
+}
+.social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    border: 1px solid #000;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+}
+.social-links a:hover{
+    background: #000;
+    border-color: transparent;
+    color: #fff;
+}
+
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    .card-wrapper{
+        /* height: 100vh; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .event-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .event-content{
+        padding-top: 0;
+    }
+}
+
+
+
+.footer{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right,black,grey);
+    color: white;
+    padding: 100px 0 30px;
+    /* border-top-left-radius: 125px; */
+    font-size:13px;
+    line-height: 20px;
+    
+}
+
+.row{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+    flex-basis: 25%;
+}
+
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+    text-align: center;
+    margin: 0px;
+}
+
+.logo{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.col a{
+    text-decoration: none;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.col a:hover{
+    color: grey;
+    border-bottom: 1px solid grey;
+}
+
+.email{
+    width: fit-content;
+    border-bottom: 1px solid white;
+    margin: 20px 0;
+    align-self: center;
+}
+
+.col>.email{
+    text-align: center;
+}
+
+.social-icons .fa-solid{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size:20px ;
+    color: black;
+    background: white;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.social-icons .fa-brands{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size:20px ;
+    color: black;
+    background: white;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+#connect a:hover{
+    border: none;
+}
+
+.marks1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2%;
+}
+
+.marks{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}

@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Dancing+Script&family=Poppins:wght@300&display=swap');
+
+
+.box2  ul  li{
+    display: inline;
+    padding: 4px;
+    /* background-color: aqua; */
+}
+
+.box2 ul li a{
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s linear;
+}
+
+*{
+    /* color: black !important; */
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('./images/back14.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: brightness(-100%); */
+}
+.box2  ul  li a:hover{
+    /* background-color: aqua; */
+    /* background-color:rgb(241, 239, 239); */
+    color: palevioletred;
+    border-bottom: 2px solid black;
+}
+.mainheader{
+    display: flex;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    /* color: rgb(126, 19, 227); */
+    /* font-size: 1.3rem; */
+    color: white;
+    position: sticky;
+    top: 0;
+    
+}
+.maincon{
+    position: relative;
+    width: 100vw;
+    /* height: 100vh; */
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+    flex-direction: column;
+}
+
+.mainheader .box1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    
+}
+.mainheader .box2{
+    margin-left: 18%;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+p{
+    text-align: center;
+    font-size: 1.8rem;
+    /* color: white; */
+    color: rgb(126, 19, 227);
+     
+    font-family: 'Times New Roman', Times, serif;
+}
+.maincon .maincontainer .catagories{
+    display: flex;
+    /* border: 1px solid rebeccapurple; */
+    padding: 10px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+.maincon .maincontainer .catagories .catagory{
+    color: white;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgb(210, 210, 210);
+    margin:5px ;
+    padding: 5px;
+    height: fit-content;
+    transition: all 0.2s linear;
+    border-radius: 15px;
+    border: 1px solid darkslategray;
+
+}
+
+.maincon .maincontainer .catagories .catagory:hover{
+    color: grey;
+    background-color:rgb(0,0,0);
+    cursor: pointer;
+}
+
+.maincontainer{
+    /* border: 1px solid rebeccapurple; */
+    border-radius: 20px;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 4px 10px lightgrey;
+    background: rgba(0,0,0,0.3);
+}
+
+.maincontainer .subcatagories > *{
+    /* min-height: 200px; */
+    /* border: 1px solid rebeccapurple; */
+    padding: 30px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    align-items: flex-start;
+    /* align-items: center; */
+    
+
+}
+.maincontainer .subcatagories span{
+    color: white;
+    min-width: 75px;
+    margin: 10px;
+    /* padding: 5px; */
+    /* box-sizing: border-box; */
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgb(210, 210, 210);
+    height: fit-content;
+    text-align: center;
+    transition: all 0.2s linear;
+    border-radius: 15px;
+    border: 1px solid darkslategray;
+}
+
+.maincontainer .subcatagories span:hover{
+    color: grey;
+    background-color:rgb(0,0,0);
+    cursor: pointer;
+}
+
+span input[type="checkbox"]{
+    /* display: none; */
+}
+
+span:has(input:checked) {
+    color: grey;
+    background-color:rgb(0,0,0);
+}
+
+button{
+    color: white;
+    background: rgba(0,0,0,0.8);
+    transition: all 0.2s linear;
+    border-radius: 15px;
+    border: 1px solid darkslategray;
+}
+
+button:hover{
+    color: grey;
+    background-color:rgb(0,0,0);
+    cursor: pointer;
+}

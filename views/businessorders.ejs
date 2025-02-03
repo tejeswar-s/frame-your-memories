@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All My Collections</title>
+    <link rel="stylesheet" href="businessallproducts.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="maincontainer"> 
+        
+        <% if(products.length>0){ %>
+            <div class="back" title="return"><a href="/businessinterface1"><i class="fa-solid fa-arrow-left"></i></a></i></div>
+            <div class="mainhead" style="text-align: center;"><h2>UPCOMING EVENTS</h2><input style="position: absolute;
+                right: 5%;
+                border-radius: 25px;background: #ffffff3b;
+                font-size: 1.01rem;
+                padding: 5px;" placeholder="Search Address" id="mysearchproduct"  type="text" oninput="searchmyproduct()" ></div>
+            <% for(let i=0;i<products.length;i++){ %>
+                <div data-pname="<%=products[i].address %>" class="encapsulated" style="margin-top: 50px;">
+                    <a style="text-decoration: none;color: black;font-size: 1.2rem;" href="/businessallproducts/<%=products[i].pid %>">
+                        <div class="container" style="border-top-right-radius: 10px;border-top-left-radius: 10px;flex-direction: column;">
+                            <p>ORDER</p>
+                            <p><%=i+1 %></p>
+                            <p ><i class="fa fa-phone" style="font-size:20px"></i> : <%=products[i].phonenumber %></p>
+                            <p ><i class="fa fa-map-marker" aria-hidden="true"></i> : <%=products[i].address %></p>
+                            
+                        </div>
+                    </a>
+                    <div>
+
+                    </div>
+                </div>
+            <% } %>
+        <% }else{ %>
+            <div class="noprod">
+                <div class="back" title="return"><a href="/businessinterface1"><i class="fa-solid fa-arrow-left"></i></a></i></div>
+                <h2>NO ORDERS</h2>
+            </div>
+        <% } %>
+    </div>
+    <script>
+        const allproducts=document.querySelectorAll('.encapsulated');
+        
+        const searchmyproduct=()=>{
+            
+            let searchedproduct=document.querySelector('#mysearchproduct').value;
+
+            console.log(searchedproduct);
+
+            let regexp=new RegExp(searchedproduct.trim(),'i');
+
+            allproducts.forEach(oneproduct=>{
+                if(regexp.test(oneproduct.getAttribute('data-pname'))){
+                    oneproduct.style.display='block';
+                }else{
+                    oneproduct.style.display='none';
+                }
+            })
+
+        }
+    </script>
+</body>
+</html>

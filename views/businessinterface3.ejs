@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="businessinterface3.css">
+</head>
+<body>
+    <div class="maincon">
+        <header>
+            <div class="mainheader">
+                <div style="font-size: 1.5rem;" class="box1">
+                    <a style="text-decoration: none;color: white;" href="/frameyourmemories">FRAME YOUR MEMORIES</a>
+                </div>
+                <div class="box2">
+                    <ul>
+                        </a></li>
+                        <li><a href="/businessinterface2">CATEGORY</a></li>
+                        <!-- <li><a href="#">SERVICES</a></li> -->
+                        <li><a href="/businessallproducts">PRODUCTS</a></li>
+                        <li><a href="/businesslocation">LOCATIONS</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center;margin-top: 20px;color: rgb(97, 150, 5);font-weight: bolder;">SELECTED CATEGORIES</div>
+            <div class="servicecontainer">
+                <div class="services">
+                <% for(const i of selectedcat){ %>
+                    <span data-catagory="<%=i %>"><%= i.split(' ')[1] %></span>
+                <% } %>
+                </div>
+                <div class="errormess" style="color: red;"></div>
+                <div style="display: none;" class="addservice">
+                    <h3>PRODUCT DETAILS</h3>
+                    
+                    <input style="display: none;" type="text" name="mycatagory" value="1">
+                    <input type="text" style="display: none;" value="2" name="mysubcatagory">
+                    
+                    <input type="text" name="productname" 
+                    placeholder="Product Name" required>
+                    <textarea name="productdescription"  cols="30" rows="10" placeholder="Product Description" required></textarea>
+                    <div class="ava">
+                        <label for="productavailability">Available</label>
+                        <input type="checkbox" name="productavailability" id="productavailability" style="width: auto;">    
+                    </div>
+                    <input type="number" name="productbudget" placeholder="Product Cost" required>
+                    <input type="number" name="productdiscount" placeholder="Discount in %" required>
+                    <input type="text" name="image1" id="" required placeholder="Image URL">
+                    <button>SUbMiT</button>
+                </div>
+                <div style="display: none;font-weight: bolder;" class="success">
+                    SUCCESSFULLY INSERTED!
+                </div>
+
+            </div>
+        </header>
+        
+    </div>
+    <script src="businessinterface3.js"></script>
+</body>
+</html>

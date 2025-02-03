@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="adminlogin.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
+
+    <script>
+        function validate(){
+            var Adminid=document.getElementById('Adminid');
+            var email=document.getElementById('Email');
+
+            if(Adminid.value.trim()==""){
+                alert('UserId should not be empty');
+                return false;
+            }
+            else if (!(/^[A-Za-z\._\-0-9]+[@][A-Za-z]+[\.][a-z]{2,3}$/.test(email.value)))
+            {
+                alert('Enter a valid email address');
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="/frameyourmemories"><i class="fa-solid fa-arrow-left"></i></a>
+    <div class="flex">
+    <div class="adminlogin">
+        <form onsubmit="return validate()"action="/adminlogindetails" method="post">
+            <h2 >Admin Login</h2>
+            <div class="inputBox">
+                <input type="email" name="myemail" required="required" id="Email">
+                <span>Email</span>
+            </div> 
+            <div class="inputBox">
+                <input type="text" name="myid" required="required" id="Adminid">
+                <span>Admin ID</span>
+            </div> 
+            <div class="inputBox">
+                <input type="password" name="mypassword" required="required" minlength="8" id="pass">
+                <span>Password</span>
+                <p style="text-align: center;color: red;"><%= wrongPassword %></p>
+            </div>
+            <div class="help"><a href="#">Help</a></div>
+            <div class="inputBox">
+                <input type="submit" name="login" value="Login">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

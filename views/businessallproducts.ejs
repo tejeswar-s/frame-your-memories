@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All My Collections</title>
+    <link rel="stylesheet" href="businessallproducts.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="maincontainer"> 
+        
+        <% if(products.length>0){ %>
+            <div class="back" title="return"><a href="/businessinterface1"><i class="fa-solid fa-arrow-left"></i></a></i></div>
+            <div class="mainhead" style="text-align: center;"><h2>Your Products</h2><input style="position: absolute;
+                right: 5%;
+                border-radius: 25px;background: #ffffff3b;
+                font-size: 1.01rem;
+                padding: 5px;" placeholder="Search Here" oninput="searchmyproduct()" id="mysearchproduct"  type="text"></div>
+            <% for(let i of products){ %>
+                <div data-pname="<%=i.pname %>" class="encapsulated" style="margin-top: 50px;">
+                    <a href="/businessallproducts/<%=String(i._id) %>">
+                        <div class="container" style="border-top-right-radius: 10px;border-top-left-radius: 10px;">
+                            <% if(i.image1){ %>
+                                <img src="<%=i.image1%>" alt="Not Found" class="image">
+                              <% }else{ %>
+                                
+                                <img src="./images/cardphoto4.jpg" alt="Not Found" class="image">
+                              <% } %>
+                            <div class="overlay">
+                            <div class="text"><%=i.pname  %></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="editdelete">
+                        <a href="/businessproductupdate/<%=String(i._id) %>" style="border-bottom-left-radius: 10px;"><i class="fa fa-edit" style="font-size:25px"></i></a>
+                        <a href="/businessproductdelete/<%=String(i._id) %>" style="border-bottom-right-radius: 10px;"><i class="fa fa-trash-o" style="font-size:25px"></i></a>
+                    </div>
+                </div>
+            <% } %>
+        <% }else{ %>
+            <div class="noprod">
+                <div class="back"  title="return"><a href="/businessinterface1"><i id="back1" class="fa-solid fa-arrow-left"></i></a></i></div>
+                <h2>Feels So Light !</h2>
+                <h2>Time To Start Your Journey By Adding Products...</h2>
+            </div>
+        <% } %>
+    </div>
+    <script>
+        const allproducts=document.querySelectorAll('.encapsulated');
+        const searchmyproduct=()=>{
+            
+            let searchedproduct=document.querySelector('#mysearchproduct').value;
+
+            console.log(searchedproduct);
+
+            let regexp=new RegExp(searchedproduct.trim(),'i');
+
+            allproducts.forEach(oneproduct=>{
+                if(regexp.test(oneproduct.getAttribute('data-pname'))){
+                    oneproduct.style.display='block';
+                }else{
+                    oneproduct.style.display='none';
+                }
+            })
+
+        }
+    </script>
+</body>
+</html>

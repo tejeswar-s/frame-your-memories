@@ -1,0 +1,222 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+#name{
+  background-color: none;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  /* background: rgb(182, 128, 188); */
+  background: url('images/background3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.container header {
+  font-size: 1.5rem;
+  color: #000000;
+  font-weight: 500;
+  text-align: center;
+}
+.container .form {
+  margin-top: 30px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+.input-box label {
+  color: #000000;
+}
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #fefafa;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.select-box{
+  padding: 0;
+}
+
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+.form .gender-box {
+  margin-top: 20px;
+}
+.gender-box h3 {
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+.form .gender {
+  column-gap: 5px;
+}
+.gender input {
+  accent-color: rgb(130, 106, 251);
+}
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+.gender label {
+  color: #ffffff;
+}
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #000000;
+  font-size: 1rem;
+}
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(130, 106, 251);
+}
+.form button:hover {
+  background: rgb(88, 56, 250);
+}
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+}
+.new_container {
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #fcfcfc;
+  }
+  
+  .card {
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+    width: 600px;
+    height: 260px;
+    background-color: #ffffff;
+    padding: 10px 30px 40px;
+  }
+  
+  .card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    
+  }
+  
+  .drop_box {
+    margin: 10px 0;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 3px dotted #a3a3a3;
+    border-radius: 5px;
+  }
+  
+  .drop_box h4 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #2e2e2e;
+  }
+  
+  .drop_box p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #a3a3a3;
+  }
+  
+  .new_btn {
+    text-decoration: none;
+    background-color: #005af0;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .new_btn:hover{
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #005af0;
+    padding: 10px 20px;
+    border: none;
+    outline: 1px solid #010101;
+  }
+  .form input {
+    margin: 10px 0;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    border-bottom: 2px solid black;
+  }
+  
+  input[type="text"]::placeholder {
+    color: #ffffff ;
+    font-style: italic;
+  }
+  input[type="number"]::placeholder {
+    color:#ffffff ;
+    font-style: italic;
+  }
+  

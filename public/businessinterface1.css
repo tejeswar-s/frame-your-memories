@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Dancing+Script&family=Poppins:wght@300&display=swap');
+.box2  ul  li{
+    display: inline;
+    padding: 4px;
+    /* background-color: aqua; */
+    
+}
+
+.box2 ul li a{
+    text-decoration: none;
+    color: lightcyan;
+}
+
+*{
+    /* color: white !important; */
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('./images/back3.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+}
+.box2  ul  li:hover{
+    /* background-color: aqua; */
+    /* background-color: lightblue; */
+    border-bottom: 2px solid palevioletred;
+}
+.mainheader{
+    display: flex;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    /* color: rgb(126, 19, 227); */
+    color: lightcyan;
+    /* font-size: 1.3rem; */
+    
+}
+.maincon{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+
+}
+
+.mainheader .box1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    
+}
+.mainheader .box2{
+    margin-left: 18%;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+p{
+    text-align: center;
+    font-size: 1.8rem;
+    /* color: white; */
+    /* color: rgb(126, 19, 227); */
+    color: rgb(243, 188, 8);
+     
+    font-family: 'poppins';
+}
+
+.maincon .content{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    width: 300px;
+}
+
+.maincon .content >*{
+    margin:6px 0;
+}
+
+.maincon .content button{
+    padding: 8px;
+    border-radius: 20px;
+    background-color: burlywood;
+    color: black;
+    transition: 0.5s all;
+    border: none;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.maincon .content button:hover{
+    background-color: black;
+    color: white;
+}

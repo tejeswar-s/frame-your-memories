@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Admindashboard.css">
+<script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
+</head>
+<body>
+     
+<div class="sidenav" >
+    <div class="header"> 
+        <h3>Admin</h3>
+ <div><button id="partner">Partner stats</button>
+    <button id="Client">Client stats</button>
+    <!-- <button id="Finance">Finance</button> -->
+    <button id="Breg">Registrations</button>
+    <button id="complaints">Complaints</button></div>
+    </div>
+<div><button id="logout"><a href="/adminlogout">Logout</a></button></div>
+</div>
+
+<div class="main partner1">
+  <h2 style="text-align: center;">Partner Statistics</h2>
+  <div class="percentages"> 
+    <div class="partners" style="background:linear-gradient(to right,rgb(39, 39, 247),rgb(101, 101, 250)) ;">
+      <div style="text-align: center;color: beige;"><%= partners.length %></div>
+      <div style="text-align: center;color: blue;"><i class="fa-solid fa-user"></i></div>
+      <div style="text-align: center;color: beige;">Partners</div>
+    </div>
+    <div class="prod" style="background:linear-gradient(to right,rgb(235, 7, 243),rgb(246, 138, 250)) ;">
+      <div style="text-align: center;color: beige;"><%= products.length %></div>
+      <div style="text-align: center;color: red;"><i class="fa-sharp fa-solid fa-truck"></i></div>
+      <div style="text-align: center;color: beige;">Products</div>
+    </div>
+    <div class="sales" style="background:linear-gradient(to right,rgb(119, 250, 67),rgb(133, 252, 118)) ;">
+      <div style="text-align: center;color: beige;"><%= bookings.length %></div>
+      <div style="text-align: center;color: green;"><i class="fa-sharp fa-solid fa-chart-simple"></i></div>
+      <div style="text-align: center;color: beige;">Sales</div>
+    </div>
+  </div>
+  <div>
+    <h4>Details : </h4>
+    <span>Search name :</span>
+    <input oninput="namesearchfunction()" type="text" name="mynamesearch" id="mynamesearch" class="search">
+  </div>
+  <% if(partners.length>0){ %>
+  <div class="partnermain">
+    <div class="pmainheader">
+      <h5 style="margin: 0;">Name</h5>
+      <h5 style="margin: 0;">Email</h5>
+      <h5 style="margin: 0;">Products</h5>
+      <h5 style="margin: 0;">Edit</h5>
+    </div>
+    <div style="overflow-y: auto;height: 50vh;">
+      
+    <% partners.forEach(partner => { %>
+      <div data-partnername="<%= partner.username %>" class="partdetails" >
+        <div><%= partner.username %></div>
+        <div><%= partner.email%></div>
+        <% var i=0 %>
+        <% products.forEach(prod=>{ %>
+          <% if(prod.bid==partner._id){ %>
+            <% i++ %>
+         <% } %>
+        <% }) %>
+        <div><%= i %></div>
+        <div><button> <i class="fa-solid fa-ellipsis"></i></button></div>
+      </div>
+    <% }) %>
+  </div>
+  </div>
+<% }else{ %>
+  <div><h2>NO PARTNERS REGISTERED YET !</h2></div>
+<% } %>
+</div>
+   <div class="main clients1" >
+    <h2 style="text-align: center;">Client Statistics</h2>
+  <div class="percentages"> 
+    <div class="partners" style="background:linear-gradient(to right,palevioletred,rgb(246, 138, 250)) ;">
+      <div style="text-align: center;color: beige;"><%= clients.length %></div>
+      <div style="text-align: center;color: red;"><i class="fa-solid fa-user"></i></div>
+      <div style="text-align: center;color: beige;">Clients</div>
+    </div>
+    <div class="prod" style="background:linear-gradient(to right,rgb(46, 146, 46),rgb(27, 247, 27) )">
+      <div style="text-align: center;color: beige;"><%=bookings.length%></div>
+      <div style="text-align: center;color: rgb(2, 88, 2);"><i class="fa-solid fa-cart-shopping"></i></div>
+      <div style="text-align: center;color: beige;">Bookings</div>
+    </div>
+    <div class="sales" style="background:linear-gradient(to right,orange,rgb(250, 200, 106)) ;">
+      <div style="text-align: center;color: beige;"><%=reviews.length%></div>
+      <div style="text-align: center;color: orangered;"><i class="fa-solid fa-pencil"></i></div>
+      <div style="text-align: center;color: beige;">Reviews</div>
+    </div>
+  </div>
+  <div>
+    <h4>Details : </h4>
+    <span>Search name :</span>
+    <input oninput="namesearchfunctionc()" type="text" name="mynamesearch" id="mynamesearchc" class="search"></div>
+    <% if(clients.length>0){ %>
+      <div class="partnermain">
+        <div class="cmainheader">
+          <div style="text-align: center;"><h5 style="margin: 0;">Name</h5></div>
+          <div style="text-align: center;"><h5 style="margin: 0;">Email</h5></div>
+          <!-- <h5 style="margin: 0;">Bookings</h5> -->
+          <div style="text-align: center;"><h5 style="margin: 0;">Edit</h5></div>
+        </div>
+        <div style="overflow-y: auto;height: 50vh;">
+        <% clients.forEach(client=>{ %>
+          <div data-cname="<%= client.name %>" class="clientdetails">
+            <div style="text-align: left;"><%= client.name %></div>
+            <div class="cemail"style="text-align: center;"><%= client.email %></div>
+            <!-- <div><%= 5 %></div> -->
+            <div style="text-align: right;"><button> <i class="fa-solid fa-ellipsis"></i></button></div>
+          </div>
+        <% }) %>
+      </div>
+      </div>
+    <% }else{ %>
+      <div><h2>NO CLIENTS YET!</h2></div>
+   <% } %>
+   </div>
+   <!-- <div  class="main finance1"style="color: black;display: none;">
+    suhas
+   </div> -->
+   <div class="main Breg1"style="color: black;display: none;">
+    <div style="text-align: center;">
+      
+      <div><h4>PARTNER REGISTRATIONS : </h4></div>
+    <% if(registrations.length>0){ %>
+      <div class="partnermain">
+        <!-- <div class="pmainheader1">
+          <h5 style="margin: 0;">Name</h5>
+          <h5 style="margin: 0;">Email</h5>
+          <h5 style="margin: 0;">Phonenumber</h5>
+          <h5 style="margin: 0;">Address</h5>
+          <h5 style="margin: 0;">Status</h5>
+        </div> -->
+        <div style="display: grid;grid-template-columns: auto auto;gap: 5px;">
+        <% registrations.forEach(client=>{ %>
+          <div class="client1" >
+          <div class="clientdetails1">
+            <div style="text-align: left;">NAME </div>
+            <div style="text-align: left;"><%= client.username %></div>
+            <div style="text-align: left;">EMAIL</div>
+            <div class="cemail" style="text-align: left;"><%= client.email %></div>
+            <div style="text-align: left;">PHONE</div>
+            <div style="text-align: left;"><%=client.phn_no  %></div>
+            <div style="text-align: left;">ADDRESS</div>
+            <div style="text-align: left;"><%=client.add_1  %></div>
+          </div>
+          <div style="display: flex;justify-content: center;align-items: center;"><a href="/adminverify/<%=String(client._id)  %>"  ><button style="color: white;height: 30px;background: black;border-radius: 10px;" >verify</button></a></div>
+        </div>
+        <% }) %>
+      </div>
+      </div>
+    <% }else{ %>
+      <div><h2>NO REGISTRATIONS !</h2></div>
+   <% } %>
+    </div>
+   </div>
+   <div class="main complaints1 complaints" style="display: none;">
+    <div style="text-align: center;">CUSTOMER COMPLAINTS</div>
+    <% if(complaints.length>0){ %>
+        <% complaints.forEach( complain=>{%>
+            <div  class="complain" style="display: flex;flex-direction: row;">
+              <div style="display: flex;flex-direction: column;">
+                <p >NAME &nbsp;&nbsp;&nbsp;: <%=complain.name %></p>
+                <p>MAIL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <%=complain.email %></p>
+                <p>PHONE : <%=complain.mobile %></p></div>
+                <div style="display: flex;flex-direction: column;">
+                  <div style="margin-top: 10px;">QUERY : </div>
+                  <div style="height: 170px;overflow-y: auto;background: rgba(0,0,0,0.4);padding: 10px;border-radius:10px ;"><%=complain.query %></div>
+                </div>
+            </div>
+        <% }) %> 
+    <% }else{ %>
+      <div></div>
+    <p style="text-align: center;">NO COMPLAINTS</p>
+    <% } %>
+</div>
+  <script src="Admindashboard.js"></script>
+</body>
+</html> 

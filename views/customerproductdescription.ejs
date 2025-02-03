@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+} 
+
+body{
+    line-height: 1.5;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 2px;
+}
+
+.header .fa-solid{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size:20px ;
+    color: black;
+    background: grey;
+    cursor: pointer;
+    
+}
+
+.header span{
+    background: linear-gradient(to right ,rgb(241, 238, 34),rgb(236, 226, 176),rgb(224, 221, 39));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    height: 100%;
+    line-height: 40px;
+}
+
+.header .fa-solid:hover{
+    color: white;
+    background: grey;
+}
+
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.img-display{
+    overflow: hidden;
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+    min-width: 100%;
+}
+.img-select{
+    display: flex;
+}
+.img-item{
+    margin: 0.3rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+}
+.event-content{
+    padding: 2rem 1rem;
+}
+.event-title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+}
+.event-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+.event-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #256eff;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+    border-radius: 5px ;
+}
+.event-link:hover{
+    opacity: 0.9;
+}
+.event-rating{
+    color: #ffc107;
+}
+.event-rating span{
+    font-weight: 600;
+    color: #252525;
+}
+.event-price{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.event-price span{
+    font-weight: 400;
+}
+.last-price span{
+    color: #f64749;
+    /* text-decoration: line-through; */
+}
+.new-price span{
+    color: #256eff;
+}
+.event-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.event-detail p{
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+.event-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.event-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(shoes_images/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.event-detail ul li span{
+    font-weight: 400;
+}
+.booking-info{
+    margin: 1.5rem 0;
+}
+.booking-info input,
+.booking-info .addtocart,.booking-info .booknow,.booking-info .wish{
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+}
+.booking-info input{
+    width: 60px;
+}
+.booking-info .addtocart,.booking-info .booknow,.booking-info .wish{ 
+    cursor: pointer;
+    color: #fff;
+}
+.booking-info .addtocart{
+    background: #256eff;
+}
+.booking-info .booknow{
+    background-color: #ffc107;
+}
+.booking-info .wish{
+    background: #f64749;
+}
+.booking-info .addtocart:hover,.booking-info .booknow:hover,.booking-info .wish:hover{
+    opacity: 0.9;
+}
+.social-links{
+    display: flex;
+    align-items: center;
+}
+.social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    border: 1px solid #000;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+}
+.social-links a:hover{
+    background: #000;
+    border-color: transparent;
+    color: #fff;
+}
+
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    .card-wrapper{
+        /* height: 100vh; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .event-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .event-content{
+        padding-top: 0;
+    }
+}
+
+
+
+.footer{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right,black,grey);
+    color: white;
+    padding: 100px 0 30px;
+    /* border-top-left-radius: 125px; */
+    font-size:13px;
+    line-height: 20px;
+    
+}
+
+.row{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+    flex-basis: 25%;
+}
+
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+    text-align: center;
+    margin: 0px;
+}
+
+.logo{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.col a{
+    text-decoration: none;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.col a:hover{
+    color: grey;
+    border-bottom: 1px solid grey;
+}
+
+.email{
+    width: fit-content;
+    border-bottom: 1px solid white;
+    margin: 20px 0;
+    align-self: center;
+}
+
+.col>.email{
+    text-align: center;
+}
+
+.social-icons .fa-solid{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size:20px ;
+    color: black;
+    background: white;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.social-icons .fa-brands{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size:20px ;
+    color: black;
+    background: white;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+#connect a:hover{
+    border: none;
+}
+
+.marks1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2%;
+}
+
+.marks{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+    </style>
+</head>
+<body>
+    
+        <div class="header">
+            <a href="/customerinterface1"><i class="fa-solid fa-arrow-left"></i></a>
+            <span style="color:white">Frame Your Memories</span>
+            <a href="/mypage2"><i class="fa-solid fa-user"></i></a>
+        </div>
+        <div>
+        <div class = "card-wrapper">
+            <div class = "card">
+              <!-- card left -->
+              <div class = "event-imgs">
+                <div class = "img-display">
+                  <div class = "img-showcase">
+                    
+                    <% if(product.image1) {%>
+                        <img src="<%=product.image1 %>" alt="<%=product.pname %>">
+                    <% }else{ %>
+                        <img src = "<%=product.image1 %>" alt = "<%=product.pname %>">
+                    <% } %>
+                    <img src = "<%=product.image1 %>" alt = "event">
+
+                    <% if(product.image1) {%>
+                        <img src="<%=product.image1 %>" alt="<%=product.pname %>">
+                    <% }else{ %>
+                        <img src = "<%=product.image1 %>" alt = "<%=product.pname %>">
+                    <% } %>
+                    <img src = "<%=product.image1 %>" alt = "event">
+                  </div>
+                </div>
+                <div class = "img-select">
+                  <div class = "img-item">
+
+                    <% if(product.image1) {%>
+                        <a href = "#" data-id = "1">
+                            <img src = "<%=product.image1 %>" alt = "event">
+                          </a>
+                    <% }else{ %>
+                        <a href = "#" data-id = "1">
+                            <img src = "<%=product.image1 %>" alt = "<%=product.pname %>">
+                          </a>
+                    <% } %>
+
+                    
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "2">
+                      <img src = "<%=product.image1 %>" alt = "event">
+                    </a>
+                  </div>
+                  <div class = "img-item">
+
+                    <% if(product.image1) {%>
+                        <a href = "#" data-id = "1">
+                            <img src = "<%=product.image1 %>" alt = "event">
+                          </a>
+                    <% }else{ %>
+                        <a href = "#" data-id = "1">
+                            <img src = "<%=product.image1 %>" alt = "<%=product.pname %>">
+                          </a>
+                    <% } %>
+
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "4">
+                      <img src = "<%=product.image1 %>" alt = "event">
+                    </a>
+                  </div>
+                </div>
+              </div>
+      
+              <div class = "event-content">
+                <h2 class = "event-title"><%=pname %></h2>
+                <a href = "#" class = "event-link">FYM</a>
+      
+                <div class = "event-rating">
+                  <span>Customer Ratings: </span>
+                  <% for(let i=0;i < Math.floor(star);i++){ %>
+                    <i class = "fas fa-star"></i>
+                  <% } %>
+                  <% if(star%1!=0){ %>
+                    <i class = "fas fa-star-half-alt"></i>
+                  <% } %>
+                  <span><%= star %>(<%= count %>)</span>
+                </div>
+
+                <div class = "event-price">
+                  <p class = "last-price">Approx Budget :  <span>Rs.<%= budget %></span></p>
+                  <p class = "new-price">Get discount on approx Budget: <span>(<%= discount %>%) </span></p>
+                </div>
+      
+                <div class = "event-detail">
+                  <h2>About <%=category  %> </h2>
+                  <p><b>Description : </b><%= descrip %></p><ul>
+                    <li>Availability: <span><%= Availability %></span></li>
+                    <li>Category: <span><%= category %></span></li>
+                    <li>Sub Category: <span><%= subcategory %></span></li>
+                    <li>Location Avalability: <span style="display: inline-block;overflow-x: scroll;width: 150px;" ><%= location %></span></li>
+                  </ul>
+                </div>
+      
+                <div class = "booking-info">
+                  <!-- <button></button> -->
+                  <a href="/customerproductaddtocart/<%=product._id %>">
+                    <button  type = "button" class = "addtocart">
+                        Add to Cart <i class = "fas fa-shopping-cart"></i>
+                      </button>
+                  </a>
+                  
+                  <!-- <a href=""><button type = "button" class = "booknow">Book Now</button></a> -->
+
+                  <a href="/customerproductaddtowishlist/<%=product._id %>">
+                    <button type = "button" class = "wish">
+                        <i class="fa-solid fa-heart"></i></i>
+                      </button>
+                  </a>
+
+                </div>
+
+                <div class="cust-Reviews">
+
+                </div>
+
+      
+                <div class = "social-links">
+                  <p>Share At: </p>
+                  <a href = "#">
+                    <i class = "fab fa-facebook-f"></i>
+                  </a>
+                  <a href = "#">
+                    <i class = "fab fa-twitter"></i>
+                  </a>
+                  <a href = "#">
+                    <i class = "fab fa-instagram"></i>
+                  </a>
+                  <a href = "#">
+                    <i class = "fab fa-whatsapp"></i>
+                  </a>
+                  <a href = "#">
+                    <i class = "fab fa-pinterest"></i>
+                  </a>
+                </div>
+                <br><br>
+
+                <h4>Customer Reviews : </h4>
+                <br><br>
+                <div class="reviews" style="height:45vh;overflow-y: auto;">
+                  <% if(reviews.length>0){ %>
+                    <% reviews.forEach(review => {%>
+                      <div style="margin-bottom: 50px;">
+                        <h4><%=review.name%></h4>
+                        <br>
+                        <% for(let i=0;i < Math.floor(review.rating);i++){ %>
+                          <i class = "fas fa-star"></i>
+                        <% } %>
+                        <% if(review.rating%1!=0){ %>
+                          <i class = "fas fa-star-half-alt"></i>
+                        <% } %>
+                        <span><%=review.rating%></span>
+                        <br><br>
+                       <p><%= review.review %></p>
+                       <hr>
+                      </div>
+                    <% }) %>
+                 <% } else {%>
+                     <p> No reviews yet</p>
+                <% } %>
+                </div>
+
+                
+
+              </div>
+            </div>
+          </div>
+      </div>
+
+    <div class="marks1">
+    <div class="marks">
+        <i class="fa-solid fa-check"></i>
+        <p>Verified</p>
+    </div>
+    <div class="marks">
+        <i class="fa-brands fa-font-awesome"></i>
+        <p>Trusted Partners</p>
+    </div>
+    <div class="marks">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <p>Enlightment</p>
+    </div>
+</div>
+
+
+        
+
+    <!-- footer -->
+
+    <div class="footer">
+        <div class="row">
+            <div class="col">
+                <img src="/images/footerlogo.png"class="logo">
+                <p>-Give Your Guest A Reason To Stay</p>
+            </div>
+            <div class="col">
+                <h2>Information</h2><br>
+                <a href="#"><b>FAQs</b></a><br>
+                <a href="#"><b>Careers</b></a><br>
+                <a href="#"><b>Security</b></a>
+            </div>
+            <div class="col">
+                <h2>Connect with Us</h2><br>
+                    <a href="#"><b>Help</b></a><br>
+                    <a href="#"><b>Contact Us</b></a>
+            </div>
+            <div class="col">
+                <h2>Company</h2><br>
+                <a href="#"><b>Our Story</b></a><br>
+                <a href="#"><b>Terms and Conditions</b></a><br>
+                <a href="#"><b>Become a Wholesaler</b></a><br>
+                <a href="#"><b>Privacy Policy</b></a><br>
+            </div>
+            <div class="col">
+                <h2>Office</h2><br>
+                <p>NH-5 road,near ISUZU</p>
+                <p>Sricity, Chittor</p>
+                <p>AndhraPradesh, PIN 524366, India</p>
+                <h4>+91 0000000000</h4>
+                <p class="email">example@gmail.com</p>
+            </div>
+    
+            
+            <div class="col" id="connect">
+                <div class="social-icons">
+                    <a href="https://www.gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/accounts/login/"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p>&copy</p>
+    </div>
+    <script >
+                const imgs = document.querySelectorAll('.img-select a');
+        const imgBtns = [...imgs];
+        let imgId = 1;
+
+        imgBtns.forEach((imgItem) => {
+            imgItem.addEventListener('click', (event) => {
+                event.preventDefault();
+                imgId = imgItem.dataset.id;
+                slideImage();
+            }); 
+        });
+        
+        console.log('afssfafafaf');
+
+        function slideImage(){
+            const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
+
+            document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+        }
+
+        window.addEventListener('resize', slideImage);
+    </script>
+</body>
+</html>

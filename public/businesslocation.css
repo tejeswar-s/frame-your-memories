@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Dancing+Script&family=Poppins:wght@300&display=swap');
+
+
+.box2  ul  li{
+    display: inline;
+    padding: 4px;
+    /* background-color: aqua; */
+}
+
+.box2 ul li a{
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s;
+}
+
+.box2 ul li a:hover{
+    color: rgb(89, 236, 255);
+    border-bottom: 2px solid rgb(89, 236, 255);
+}
+
+*{
+    /* color: black !important; */
+    font-family: 'poppins';
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+    overflow-x: hidden;
+}
+
+.mainheader{
+    display: flex;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    color: rgb(126, 19, 227);
+    /* font-size: 1.3rem; */
+    position: sticky;
+    top: 0;
+    
+}
+.maincon{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow-y: hidden; */
+}
+
+.mainheader .box1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    
+}
+.mainheader .box2{
+    margin-left: 18%;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+p{
+    text-align: center;
+    font-size: 1.8rem;
+    /* color: white; */
+    color: rgb(126, 19, 227);
+     
+    font-family: 'Times New Roman', Times, serif;
+}
+.maincon .maincontainer .catagories{
+    display: flex;
+    /* border: 1px solid rebeccapurple; */
+    padding: 10px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+.maincon .maincontainer .catagories .catagory{
+    border: 1px solid rgb(210, 210, 210);
+    margin:5px ;
+    padding: 5px;
+    height: fit-content;
+    transition: all 0.5s linear;
+
+}
+
+.maincon .maincontainer .catagories .catagory:hover{
+    background-color:rgb(241, 239, 239);
+    cursor: pointer;
+}
+
+.maincontainer{
+    /* border: 1px solid rebeccapurple; */
+    border-radius: 20px;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 4px 10px lightgrey;
+}
+
+.maincontainer .subcatagories > *{
+    /* min-height: 200px; */
+    /* border: 1px solid rebeccapurple; */
+    padding: 30px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    align-items: flex-start;
+    /* align-items: center; */
+    background: rgba(250, 240, 230,0.2);
+
+}
+.maincontainer .subcatagories span{
+    min-width: 75px;
+    margin: 10px;
+    /* padding: 5px; */
+    /* box-sizing: border-box; */
+    /* border: 1px solid rgb(223, 222, 223); */
+    height: fit-content;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(55,55,55);
+    color: white;
+    transition: all 0.2s;
+}
+
+.maincontainer .subcatagories span:hover{
+    color: grey;
+    background-color: black;
+}
+
+button{
+    background-color: rgb(173, 247, 247);
+    color: black;
+    border-radius: 10px;
+    border: none;
+    font-size: medium;
+    font-weight: bolder;
+    transition: all 0.2s;
+}
+
+button:hover{
+    background-color: rgb(121, 191, 248);
+    color: white;
+}

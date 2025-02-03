@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="registration.css" />
+  </head>
+  <body>
+    <section class="container">
+      <header>Bussiness Registration Form</header>
+      <form class="form" method="post" action="/addbusinessman" onsubmit="return validateAttributes();">
+        <div class="input-box" style="background-color: none;">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter full name" id="name" name="name" />
+        </div>
+
+        <div class="input-box">
+          <label>Email Address</label>
+          <input type="text" placeholder="Enter email address" id="emailid" name="email_id" value="<%=mail %>" readonly />
+          
+        </div>
+
+        <div class="input-box">
+            <label>Pancard Number</label>
+            <input type="text" placeholder="Enter Pancard Number" name="pan_no" id="pancard"/>
+          </div>
+
+          <div class="input-box">
+            <label>Experience</label>
+            <input type="number" placeholder="Enter your Experience" name="exp_no" id="experience" min="0"/>
+          </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Phone Number</label>
+            <input type="text" placeholder="Enter phone number" name="phn_no" id="phone" />
+          </div>
+
+          <div class="input-box">
+            <label>Birth Date</label>
+            <input type="date" id="dob" placeholder="Enter birth date" name="date_birth" min="1940-01-01" max="2002-12-31" />
+          </div>
+        </div>
+        <div class="gender-box">
+          <h3>Gender</h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input type="radio" id="check-male" name="gender" checked />
+              <label for="check-male">male</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" />
+              <label for="check-female">Female</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" />
+              <label for="check-other"> transgender</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" />
+              <label for="check-other">prefer not to say</label>
+            </div>
+          </div>
+        </div>
+        <div class="input-box address">
+          <label>Address</label>
+          <input type="text" placeholder="Enter street address" name="add_1" id="address1" />
+          <input type="text" placeholder="Enter street address line 2" name="add_2" id="address2" />
+          <div class="column">
+            <div class="select-box">
+              <select>
+                <option hidden>Country</option>
+                <option>India</option>
+              </select>
+            </div>
+            <input type="text" placeholder="Enter your city" name="city_name" id="city_1" />
+          </div>
+          <div class="column">
+            <input type="text" placeholder="Enter your region" name="reg_name" id="region_1" />
+            <input type="text" placeholder="Enter postal code" name="pin_no" id="pincode" />
+          </div>
+            </div>
+          </div>
+        </div>
+        <input type="text" id="img_upload" placeholder="Paste image url" name="imgname" required>
+        <input type="submit" value="Submit Now">
+      </form>
+    </section>
+    <script>
+        function myFunction(){
+            var x = document.getElementById("dob").min = "1940-01-01"
+        }
+        const dropArea = document.querySelector(".drop_box"),
+  button = dropArea.querySelector("button"),
+  dragText = dropArea.querySelector("header"),
+  input = dropArea.querySelector("input");
+let file;
+var filename;
+
+button.onclick = () => {
+  input.click();
+};
+
+input.addEventListener("change", function (e) {
+  var fileName = e.target.files[0].name;
+  let filedata = `
+    <form action="" method="post">
+    <div class="form">
+    <h4>${fileName}</h4>
+    </div>
+    </form>`;
+  dropArea.innerHTML = filedata;
+});
+
+function validateAttributes() {
+  alert("ok");
+
+
+  var name = document.getElementById('name').value;
+  
+  var email = document.getElementById('emailid').value
+  var pan = document.getElementById('pancard').value
+  var exp = document.getElementById('experience').value
+  var phnum = document.getElementById('phone').value
+  var addres1 = document.getElementById('address1').value
+  var addres2 = document.getElementById('address2').value
+  var cty = document.getElementById('city_1').value
+  var region = document.getElementById('region_1').value
+  var pinnum = document.getElementById('pincode').value
+  var img = document.getElementById('img_upload').value;
+  var regex = /^[A-Za-z]+$/;
+  if (!regex.test(name)) {
+    alert("Invalid Name");
+    return false;
+     
+  }
+
+  
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert("Invalid email");
+    return false;
+  }
+
+  
+  else if (!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(pan)) {
+    alert("Invalid Pan");
+    return false;
+  }
+
+  
+  else if (!/^[0-9]+$/.test(exp) || exp < 0) {
+    alert("Invalid Expression");
+    return false;
+  }
+
+  
+  else if (!/^[0-9]{10}$/.test(phnum)) {
+    alert("Invalid Phone number");
+    return false;
+  }
+
+  
+  else if (addres1.trim().length === 0) {
+    alert("Invalid Address");
+    return false;
+  }
+  
+  else if (addres2.trim().length === 0) {
+    alert("Invalid address");
+    return false;
+ }
+
+ else if (cty.trim().length === 0) {
+  alert("Invalid City");
+  return false;
+}
+
+else if (region.trim().length === 0) {
+  alert("Invalid region");
+  return false;
+}
+  
+  else if (!/^[0-9]{6}$/.test(pinnum)) {
+    alert("Invalid pincode");
+    return false;
+  }
+  else if (img.trim().length === 0) {
+    alert("image link cannot be empty.");
+  }
+
+  else {window.location.href="/addbusinessman";}
+
+
+}
+    </script>
+ </body>
+</html>

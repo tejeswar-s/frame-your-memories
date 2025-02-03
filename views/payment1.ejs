@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,600&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-transform: uppercase;
+        }
+
+        .payContainer {
+            min-height: 100vh;
+            background: linear-gradient(100deg, rgb(200, 219, 234), rgb(240, 194, 199));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            padding-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        i.button {
+            position: absolute;
+            top: 5%;
+            transform: translateY(-50%);
+            height: 36px;
+            width: 36px;
+            background-color: #343f4f;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            color: #fff;
+            font-size: 15px;
+            transition: all 0.3s linear;
+            z-index: 100;
+            cursor: pointer;
+            margin-left: 3%;
+        }
+
+        i.button:active {
+            transform: scale(0.94) translateY(-50%);
+        }
+
+        .payContainer .head {
+            padding: 20px;
+            border-bottom: 20px;
+        }
+
+        .payContainer form {
+            background: #f7f3f6;
+            border-radius: 5px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 600px;
+        }
+
+        .payContainer form .inputBox {
+            margin-top: 20px;
+        }
+
+        .payContainer form .inputBox span {
+            display: block;
+            color: #999;
+            padding-bottom: 5px;
+        }
+
+        .payContainer form .inputBox input,
+        .payContainer form .inputBox select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            color: #444;
+        }
+
+        .payContainer form .inputBox .cvv-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            color: #444;
+        }
+
+        .payContainer form .flexbox {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .payContainer form .flexbox .inputBox {
+            flex: 1 1 150px;
+        }
+
+        .payContainer form .button {
+            width: 100%;
+            background: linear-gradient(45deg, blueviolet, deeppink);
+            margin-top: 20px;
+            padding: 10px;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: .2s linear;
+        }
+
+        .payContainer form .button:hover {
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
+
+        /* @media (maxwidth: 620px){
+            .payContainer{
+                flex-wrap: wrap;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <i class="fa-solid fa-arrow-left button" id="prev"></i>
+    <div class="payContainer">
+        <div class="head">
+            <h1>Advance Booking</h1>  
+            <!-- <h3>Credit card Payment</h3> -->
+        </div>
+        <form action="" name="myform">
+            <div class="inputBox">
+                <span>Card Number</span>
+                <input type="text" maxlength="16" class="card-number-input" id ="card-number" name="one" required>
+            </div>
+            <div class="inputBox">
+                <span>Card Holder</span>
+                <input type="text" class="card-holder-input" id="card-holder" required>
+            </div>
+            <div class="flexbox">
+                <div class="inputBox">
+                    <span>Expiration Month</span>
+                    <select name="" id="expiry-month" class="month-input">
+                        <option value="month" selected disabled>Month</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>Expiration Year</span>
+                    <select name="" id="expiry-year" class="year-input">
+                        <option value="year" selected disabled>Year</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>cvv</span>
+                    <input type="text" id="cvv" maxlength="3" class="cvv-input" required>
+                </div>
+            </div>
+            <input type="submit" class="button" id="submit-button" name="order" id="order" value="Place Order">
+
+        </form>
+    </div>
+
+    <script>
+        const submit = document.querySelector("#submit-button");
+        const cardnumber = document.querySelector("#card-number");
+        const cardholder = document.querySelector("#card-holder");
+        const expirymonth = document.querySelector("#expiry-month");
+        const expiryyear = document.querySelector("#expiry-year");
+        const cvvValue = document.querySelector("#cvv");
+        submit.addEventListener("click",(event)=>{
+            event.preventDefault();
+
+            const cardNumberRegex = /^\d{16}$/;
+            const cardHolderRegex = /^[a-zA-Z]+\s[a-zA-Z]+$/;
+            const expiryMonthRegex = /^(0?[1-9]|1[0-2])$/;
+            const expiryYearRegex = /^\d{4}$/;
+            const cvvRegex = /^\d{3}$/;
+
+            let errorMessage = "";
+
+            if (!cardNumberRegex.test(cardnumber.value)) {
+                 errorMessage += "Please enter a valid credit card number (16 digits)\n";
+            }
+
+            if (!cardHolderRegex.test(cardholder.value)) {
+                errorMessage +=
+                    "Please enter the cardholder name in the format 'First Name Last Name'\n";
+            }
+
+            if (!expiryMonthRegex.test(expirymonth.value)) {
+                errorMessage += "Please enter a valid expiration month (MM)\n";
+            }
+
+            if (!expiryYearRegex.test(expiryyear.value)) {
+                errorMessage += "Please enter a valid expiration year (YYYY)\n";
+            }         
+
+            if (!cvvRegex.test(cvvValue.value)) {
+                errorMessage += "Please enter a valid CVV (3 digits)\n";
+            }
+            if (errorMessage !== "") {
+                alert(errorMessage);
+            } else {
+                window.location.href="/payment";
+            }
+            return false;
+        });
+
+        const back= document.getElementById("prev")
+        back.addEventListener("click",(event)=>{
+            event.preventDefault();
+            window.location.href="/mypage2";
+});
+
+    </script>
+</body>
+
+</html>

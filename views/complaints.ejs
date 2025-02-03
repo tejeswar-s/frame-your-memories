@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPLAINTS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .complaints{
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 10px;
+            
+            border: 1px solid rebeccapurple;
+        }
+        .complaints .complain{
+            
+            /* width: 200px; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* text-align: center; */
+            align-items: center;
+            margin: 8px 0;
+            padding: 5px;
+            max-width: 90%;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius:10px ;
+            margin-left: 10%;
+            background-color: rgb(231, 231, 231);
+        }
+        .complaints .complain>*{
+            width: 100%;
+            margin: 5px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="complaints">
+        <% if(complaints.length>0){ %>
+            <% complaints.forEach( complain=>{%>
+                <div class="complain">
+                    <p>NAME &nbsp;&nbsp;: <%=complain.name %></p>
+                    <p>MAIL &nbsp;&nbsp;&nbsp;: <%=complain.email %></p>
+                    <p>PHONE : <%=complain.mobile %></p>
+                    <div>QUERY : <%=complain.query %></div>
+                </div>
+            <% }) %>
+        <% }else{ %>
+        <p style="text-align: center;">NO COMPLAINTS</p>
+        <% } %>
+    </div>
+</body>
+</html>

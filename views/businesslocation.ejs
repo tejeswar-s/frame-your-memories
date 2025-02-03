@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations</title>
+    <link rel="stylesheet" href="businesslocation.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
+
+    <style>
+        body{
+            background-image: url('/images/location2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            /* position: fixed; */
+            /* background: black; */
+            background-attachment: fixed;
+  background-position: center; 
+        }
+        .locationcont{
+            min-height: 300px;
+        }
+        .maincon{
+            flex-direction: column;
+        }
+        .myloctions p{
+            font-size: 1.1rem !important;
+        }
+        .mylocations{
+            /* border: 1px solid rebeccapurple; */
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8px;
+            width: 75vw;
+            box-sizing: border-box;
+            box-shadow: 2px 4px 10px lightgrey;
+            background: rgba(255, 255, 255, 0.5);
+            margin-top: 300px;
+        }
+        .mylocations span{
+            /* border: 1px solid lightgray; */
+            padding: 5px;
+            margin: 5px;
+            border-radius: 10px;
+            background: darkslategrey;
+            color: white;
+        }
+        .alllocations{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="maincon">
+        <header>
+            <div class="mainheader">
+                <div style="font-size: 1.5rem;" class="box1">
+                    <a style="text-decoration: none;color: white;" href="/frameyourmemories">FRAME YOUR MEMORIES</a>
+                </div>
+                <div class="box2">
+                    <ul>
+                        <li><a href="/businessinterface1" style="text-transform: uppercase;"><% if(user){ %>
+                            Wecolme <%=user %> 
+                        <% } %>
+                        </a></li>
+                        <li><a href="/businessinterface2">CATEGORY</a></li>
+                        <!-- <li><a href="#">SERVICES</a></li> -->
+                        <li><a href="/businessallproducts">PRODUCTS</a></li>
+                        <li><a href="/businesslocation">LOCATIONS</a></li>
+                        <li ><a href="/businesslogout">LOG OUT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="mylocations">
+            <% if(availableloc.length>0) {%>
+                <p style="font-size: 1.5rem;text-transform: uppercase;color: darkolivegreen;font-weight: bolder;font-family: 'poppins';" >we are available now in <i class="fa-solid fa-location-dot"></i></p>
+                <div class="alllocations">
+                    <% availableloc.forEach(loc=>{%>
+                        <span><i class="fa-solid fa-location-dot"></i> <%=loc %></span>
+                    <%}) %>
+                </div>
+            <% }else{ %>
+                <p style="font-size: 1.1rem;text-transform: uppercase;">unavailable at present</p>
+            <% } %>
+        </div>
+        <form action="/businesslocation" method="post" id="myform">
+            <div class="maincontainer">
+                <div class="subcatagories locationcont">
+                    <div class="eventsubcatagories locations" data-id="0">
+                        <% for(i of locations){ %>
+                            <span style="padding: 5px;"><input name="<%=i %>" type="checkbox"  id="<%=i  %>"> <label for="<%=i  %>"><%=i  %></label></span>
+                        <% } %>
+                    </div>
+                </div>
+                <button disabled style="margin: 10px;padding:5px 8px;width: 80px;" >submit</button>
+            </div>
+        </form>
+        
+    </div>
+    <script>
+        const submitbtn=document.querySelector('form button');
+        const alllocations=document.querySelectorAll('[type="checkbox"]');
+        
+
+        function isLocationSelected(){
+            let flag=0;
+            alllocations.forEach(locatio=>{
+                if(locatio.checked)
+                {
+                    flag=1;
+                }
+            })
+
+            return flag;
+        }
+
+        alllocations.forEach(eachspan=>{
+            eachspan.addEventListener('change',()=>{
+                if(isLocationSelected()==1){
+                    submitbtn.disabled=false;
+                }else{
+                    submitbtn.disabled=true;
+                }
+            })
+        })
+
+        
+        
+         
+    </script>
+</body>
+</html>

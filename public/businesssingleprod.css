@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Dancing+Script&family=Poppins:wght@300&display=swap');
+
+        
+
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+            font-family: 'poppins';
+        }
+        
+        .maincontainer{
+            width: 100%;
+            height: 91vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:transparent;
+        }
+
+        .subcontainer{
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+            background:transparent;
+            border-radius: 10px;
+            background: rgba(214, 214, 214, 0.1);
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .subcontainer p{
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: #333333;
+            font-size: 1.4rem;
+        }
+
+        .back a{
+            position: absolute;
+            left: 8px;
+            top: 5px;
+            font-size: 2rem;
+            font-weight: bolder;
+            color: grey;
+        }
+
+        .back a:hover{
+            color: black;
+        }
+
+        .mainhead{
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+
+
+        .mainheader{
+            height: 50px;
+        }
+
+        body{
+            background-image: url('images/singleprodback.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            /* background: black; */
+        }

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE DOCUMENT</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Dancing+Script&family=Poppins:wght@300&display=swap');
+
+*{
+    font-family: 'poppins';
+}
+
+        .box2  ul  li{
+    display: inline;
+    padding: 4px;
+    gap: 10px;
+    margin: 2px;
+    /* background-color: aqua; */
+}
+
+.box2 ul li a{
+    text-decoration: none; 
+    color: white;
+    transition: all 0.2s;
+}
+
+.box2 ul li a:hover{
+    color: rgb(247, 244, 111);
+    border-bottom: 2px solid rgb(173, 185, 3);
+
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/back2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.mainheader{
+    display: flex;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgba(0,0,0,0.7);
+    position: sticky;
+    top: 0;
+    /* background-color: lightcyan; */
+    /* font-size: 1.3rem; */
+    
+}
+.maincon{
+    position: relative;
+    width: 100vw;
+    /* height: 100vh;    */
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    /* overflow-y: hidden; */
+
+}
+
+.mainheader .box1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    
+}
+.mainheader .box2{
+    margin-left: 18%;
+}
+
+header{
+    position: relative;
+    width: 100%;
+}
+
+p{
+    text-align: center;
+    font-size: 1.8rem;
+    /* color: white; */
+    color: rgb(126, 19, 227);
+     
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.success{
+    color: rgb(81, 203, 81) !important;
+    /* background-color: aliceblue; */
+}
+
+.servicecontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.services{
+    min-height: 150px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    width: 80%;
+    display: flex;
+    box-shadow: 2px 4px 10px lightgrey;
+
+}
+.services span{
+    margin: 8px;
+    padding:8px ;
+    border: 1px solid lightgrey;
+    height: fit-content;
+    min-width: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+.addservice{
+    width: 400px;
+    height: 500px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: rgba(0,0,0,0.2);
+}
+
+.servicecontainer>*{
+    margin: 10px;
+}
+
+input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid darkslategrey;
+    width: 50%;
+    color: black;
+    font-weight: bolder;
+    font-size: medium;
+    transition: all 0.2s linear;
+}
+
+input::placeholder{
+    color: black;
+}
+
+input:focus{
+    outline: none;
+    border-bottom: 2px solid rgb(116, 253, 116);
+}
+
+
+
+.ava{
+    width: 50%;
+}
+
+textarea{
+    width: 50%;
+    height: 50px;
+    overflow-y: auto;
+    background: transparent;
+    border: 2px solid darkslategrey;
+    color: black;
+    outline: none;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: medium;
+    transition: all 0.2s linear;
+}
+
+textarea::placeholder{
+    color: black;
+}
+
+textarea:focus{
+    outline: none;
+    border: 2px solid rgb(116, 253, 116);
+}
+
+button{
+    background-color: lightcyan;
+    color: white;
+    border-radius: 8px;
+    /* font-size: medium;
+    font-weight: bold; */
+    border: none;
+    color: darkslategrey;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    transition: all 0.5s;
+}
+
+button:hover{
+    color: grey;
+    background-color: black;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="maincon">
+        <header>
+            <div class="mainheader">
+                <div style="font-size: 1.5rem;" class="box1">
+                    <a style="text-decoration: none;color: white;" href="/frameyourmemories">FRAME YOUR MEMORIES</a>
+                </div>
+                <div class="box2">
+                    <ul>
+                        <li><a href="/businessinterface2">CATEGORY</a></li>
+                        <!-- <li><a href="#">SERVICES</a></li> -->
+                        <li><a href="/businessallproducts">PRODUCTS</a></li>
+                        <li><a href="/businesslocation">LOCATIONS</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="servicecontainer">
+                <div  class="addservice">
+                    
+                        <h3 id="productid" data-_id="<%=Product._id %>">UPDATE PRODUCT DETAILS</h3>
+                        <input style="display: none;" type="text" name="mycatagory" value="<%=Product.catagory %>">
+                        <input type="text" style="display: none;" value="<%=Product.subcatagory %>" name="mysubcatagory">
+                        
+                        <input type="text" name="productname" 
+                        placeholder="Product Name" value="<%=Product.pname %>">
+                        <textarea name="productdescription"  cols="30" rows="10" placeholder="<%=Product.pdescription %>" value="<%=Product.pdescription %>"></textarea>
+                        <div style="display: flex;flex-direction: row;">
+                            <label for="productavailability">Available</label>
+                            <input type="checkbox" name="productavailability" id="productavailability">    
+                        </div>
+                        <input type="number" name="productbudget" placeholder="Product Cost" value="<%=Product.pbudget %>" required>
+                        <input type="number" name="productdiscount" placeholder="Discount in %" value="<%=Product.pdiscount %>" required>
+                        <button>SUBMIT</button>
+                    </div>
+                    
+            </div>
+        </header>
+        
+    </div>
+    <script>
+        const allinputs=document.querySelectorAll('input');
+        const textarea=document.querySelector('textarea');
+        const SUbMiT=document.querySelector('button');
+        const productid=document.querySelector('#productid');
+
+        SUbMiT.addEventListener('click',async ()=>{
+            const formdvalues=[];
+            
+            allinputs.forEach(singleinput=>{
+            if(!(singleinput.type==='checkbox')){
+                formdvalues.push(singleinput.value);
+            }else if(singleinput.checked){
+                formdvalues.push(1);
+            }else{
+                formdvalues.push(0);
+            }
+            
+        })
+
+        let pdesc=document.querySelector('textarea').value;
+        if(!pdesc){
+            pdesc=document.querySelector('textarea').placeholder;
+        }
+
+        const obj={
+            catagory:formdvalues[0],
+            subcatagory:formdvalues[1],
+            pname:formdvalues[2],
+            pavailability:formdvalues[3],
+            pbudget:Number(formdvalues[4]),
+            pdiscount:Number(formdvalues[5]),
+            pdescription:pdesc,
+            _id:productid.getAttribute('data-_id')
+            };
+        
+        
+        try{
+            await fetch('/bpage4',{
+                method:'POST',
+                body:JSON.stringify(obj),
+                headers:{'Content-Type':'application/json'}
+            })
+            .then(resul=>{
+                console.log('sucess');
+            }).catch(err=>{
+                console.log(`some ERRROR in ${err}`)
+                
+            })
+            }catch(erro){
+                console.log('Some Error occured : ',erro);
+                // location.assign('/businessinterface2');
+            }
+
+            location.href='/businessallproducts';
+        });
+    </script>
+</body>
+</html>

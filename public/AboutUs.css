@@ -1,0 +1,184 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'); */
+
+  /* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'); */
+
+  /* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'); */
+
+ 
+  @import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Dancing+Script&display=swap');
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body{
+    background: black;
+}
+
+nav{
+    width:95%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    transition: 0.5s;
+    z-index: 1;
+    background: black;
+    height: auto;
+}
+
+nav.black{
+    background: black;
+    opacity: 0.9;
+}
+
+nav .logo{
+    width:20%;
+}
+
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+nav ul li a:hover{
+    color: palevioletred;
+    border-bottom:2px solid palevioletred;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color:white;
+    font-size: 17px;
+}
+
+.aboutmain{
+    display: flex;
+    gap: 50px;
+    background: black;
+    flex-direction: column;
+}
+
+.about{
+    display: flex;
+    position: relative;
+    /* flex-wrap: wrap-reverse; */
+    flex-direction: row;
+    background: black;
+    width: 60%;
+}
+
+
+.detel{
+    margin-left: 8%;
+    margin-top: 15%;
+    width: 100%;
+}
+
+.detel h1{
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+span{
+    color: rgb(247, 97, 122);
+    
+}
+
+.detel p{
+    color: white;
+    line-height: 22px;
+}
+
+.detel .pagelinks{
+    /* background: #212121; */
+    padding: 10px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    margin: 30px 0;
+    /* border-radius: 5px; */
+}
+
+.images{
+    width: 60%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 89%;
+    /* right: 20px; */
+}
+
+.images img{
+    height: 100%;
+    position: absolute;
+    left: 80%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: bottom 2s, left 1s;
+}
+
+/* @media only screen and (max-width: 300px){
+    .about{
+        flex-direction: column;
+    }
+    .images{
+        position: relative;
+    }
+
+    .images img{
+        position: relative;
+    }
+} */
+
+
+.images:hover .shape{
+    bottom:10%;
+}
+
+.images:hover .girl{
+    bottom: 20%;
+}
+
+.social{
+    margin-left: 12%;
+    margin-top: 20px;
+}
+
+.social a{
+    font-size: 30px;
+    color: orange;
+    margin-right: 20px;
+}
+
+.social a:hover{
+    color: rgb(247, 97, 122);
+}
+
+.eventmatter{
+    font-family: 'Alkatra', cursive;
+/* font-family: 'Dancing Script', cursive; */
+    margin-top:70px ;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.wish{
+    font-size: 1.5rem;
+    color: grey;
+    text-align: center;
+    margin-top: 40px;
+}
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Coupons</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700;900&family=Raleway:wght@100;300;500;700&display=swap');
+
+
+        :root {
+            --bodyBack: #eff6f7;
+            --textColor: #b3b799;
+            --starColor: #674132;
+            --sectionBack: #f7f6f9;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        body {    
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+            background-image: url('img19.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            object-fit: cover;
+            background-size: 100% 100%;
+        }
+
+        .container {
+            width: 75vw;
+            height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .header {
+            height:100%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            color: solid black;
+        }
+
+        .products {
+            width: 100%;
+            align-self: center;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .product {
+            position: relative;
+            background-color: var(--textColor);
+            width: 300px;
+            height: 100%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 12px 12px 25px;
+            border-radius: 10px;
+            transition: .3s;
+            border:1px solid black;
+        }
+
+        .product:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+        }
+
+        .product .image {
+            width: 100%;
+            height: 90%;
+            display: grid;
+            place-content: center;
+            border-radius:25px;
+        }
+
+        .image img {
+            width: 240px;
+        }
+
+        .namePrice {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .namePrice h3 {
+            font-size: 2em;
+            text-transform: capitalize;
+            color: var(--sectionBack);
+        }
+
+        .namePrice h3{
+            font-size:1em;
+            color: var(--sectionBack);
+        }
+
+        .namePrice span {
+            font-size: 1.5em;
+            color: var(--sectionBack);
+        }
+
+        .product p {
+            font-size: 18px;
+            line-height: 25px;
+        }
+
+        i.button {
+            position: absolute;
+            top: 10%;
+            transform: translateY(-50%);
+            height: 36px;
+            width: 36px;
+            background-color: #343f4f;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            color: #f8f6f6;
+            font-size: 15px;
+            transition: all 0.3s linear;
+            z-index: 100;
+            cursor: pointer;
+            margin-left: 0.5%;
+        }
+
+        i.button:active {
+            transform: scale(0.94) translateY(-50%);
+        }
+        .expired img{
+            filter:none;
+        }
+        .expired img:hover{
+            filter:grayscale(1);
+        }
+
+        .fa-copy:active {
+            transform: scale(0.94) translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <a href="/mypage2"><i class="fa-solid fa-arrow-left button" id="prev"></i></a>
+        <div class="header">
+            <h1>Exciting Gift Coupons</h1>
+        </div>
+        </div>
+
+        <div class="products">
+
+            <div class="product">
+                <div class="image">
+                    <img src="img20.jpg" alt="Gift-Coupons">
+                </div>
+                <div class="namePrice">
+                    <h3>earphone</h3>
+                    <span><i class="fa-regular fa-copy" id="prev"></i></span>
+                </div>
+
+            </div>
+
+            <div class="product">
+                <div class="image">
+                    <img src="img20.jpg" alt="Gift-Coupons">
+                </div>
+                <div class="namePrice">
+                    <h3>iphone</h3>
+                    <span><i class="fa-regular fa-copy" id="prev"></i></span>
+                </div>
+
+            </div>
+
+            <div class="product">
+                <div class="image">
+                    <img src="img20.jpg" alt="Gift-Coupons">
+                </div>
+                <div class="namePrice">
+                    <h3>laptop</h3>
+                    <span><i class="fa-regular fa-copy" id="prev"></i></span>
+                </div>
+
+            </div>
+
+            <div class="product expired">
+                <div class="image">
+                    <img src="img20.jpg" alt="Gift-Coupons">
+                </div>
+                <div class="namePrice">
+                    <h4 style="color:#eff6f7">Oops! Sorry the coupon is expired.</h4>
+                    <span><i class="fa-regular fa-copy" id="prev"></i></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+         const back= document.getElementById("prev")
+        back.addEventListener("click",(event)=>{
+            event.preventDefault();
+            window.location.href="/mypage2";
+        })
+    </script>
+
+</body>
+
+</html>

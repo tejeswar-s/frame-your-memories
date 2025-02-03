@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <style>
+        
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+  body{
+        padding:2px;
+        margin:0;
+        box-sizing:border-box;
+        background: linear-gradient(100deg,rgb(224, 237, 240),rgb(237, 225, 228));
+        background-image: url('/images/background5.jpg');
+        background-repeat: no-repeat;
+        background-position: relative;
+        background-size:cover;
+        font-family: 'Poppins';
+       }
+       .table-box{
+        margin: 20px auto;
+       }
+       .table-row{
+        display:table;
+        width:95%;
+        margin:10px auto;
+        font-family:'Poppins';
+        /* background: transparent; */
+        padding: 8px 0;
+        /* color: #555; */
+        color:antiquewhite;
+        font-size: 18px;
+        font-weight: 700;
+        box-shadow:0 1px 4px 0 rgba(0,0,50,0.3);
+       }
+       .table-head{
+    background: #8665f7;
+    box-shadow: none;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 800;
+}
+.table-head .table-cell{
+    border-right: none;
+}
+.table-cell{
+    display: table-cell;
+    width: 12%;
+    text-align: center;
+    padding: 2px 0;
+    border-right: 1px solid #d6d4d4;
+    vertical-align: middle;
+}
+.first-cell{
+    text-align: left;
+    padding-left: 10px;
+}
+.last-cell{
+    border-right: none;
+}
+a{
+    text-decoration: none;
+    color: #555;
+}
+
+@media only screen and (max-width: 600px) {
+  .table-row {
+    font-size: 11px;
+  }
+}
+.else{
+    font-weight: 700;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.tophead {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            /* justify-content: space-between; */
+        }
+        .tophead h1{
+            margin-left:15%;
+        }
+
+        .tophead h1:hover{
+            letter-spacing: 2px;
+        }
+
+        i.button {
+            position: absolute;
+            top: 5%;
+            transform: translateY(-50%);
+            height: 36px;
+            width: 36px;
+            background-color: #343f4f;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            color: #fff;
+            font-size: 15px;
+            transition: all 0.3s linear;
+            z-index: 100;
+            cursor: pointer;
+            margin-left: 3%;
+        }
+
+        i.button:active {
+            transform: scale(0.94) translateY(-50%);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="tophead">
+        <a href="/mypage2"><i class="fa-solid fa-arrow-left button" id="prev"></i>
+        </a>
+        <h1 style="color:#fff;text-align: center;">MY WISHLIST</h1>
+    </div>
+    <table class="table">
+        <div class="table-row table-head">
+            <div class="table-cell">
+                <p>Product Name</p>
+            </div>
+            <div class="table-cell">
+                <p>Category</p>
+            </div>
+            <div class="table-cell">
+                <p>Sub-Category</p>
+            </div> 
+            <div class="table-cell">
+                <p>Availability</p>
+            </div>
+            <div class="table-cell">
+                <p>Cost</p>
+            </div>
+            <div class="table-cell">
+                <p>Discount</p>
+            </div>
+            <div class="table-cell">
+                <p>Description</p>
+            </div>
+        </div>
+
+        <div>
+            <% if(products.length>0){ %>
+
+                <% products.forEach(product=>{ %>
+                    <div class="table-row">
+                    <div class="table-cell">
+                        <p> <%=product.pname  %></p>
+                    </div>
+                    <div class="table-cell">
+                        <p><%=product.catagory  %></p>
+                    </div>
+                    <div class="table-cell">
+                        <p> <%=product.subcatagory  %></p>
+                    </div>
+                    <div class="table-cell">
+                        <p></span> 
+                            <% if(product.pavailability==1){ %>
+                                Available
+                            <% }else{ %>
+                                Not Available
+                            <% } %>
+                        </p>
+                    </div>
+                    <div class="table-cell">
+                        <p><%=product.pbudget  %></p>
+                    </div>
+                    <div class="table-cell">
+                        <p><%=product.pdiscount  %> % Discount</p>
+                    </div>
+                    <div class="table-cell">
+                        <p><%=product.pdescription  %></p>
+                    </div>
+                    </div>
+                    
+                <% }) %>
+        
+            <% }else{ %>
+                <div class="else">
+                    <p> No Items in wishilst Yet</p>
+                </div>
+            <% } %>
+
+        </div>
+    </table>
+</body>
+</html>

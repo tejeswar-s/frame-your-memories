@@ -1,0 +1,139 @@
+.maininterface{
+    padding: 5px;
+    width: 86vw;
+    height: 99vh;
+    background-color:#F2F2F2;
+    /* border: 1px solid rebeccapurple; */
+    margin: auto;
+    position: relative;
+
+}
+
+.minterfacebox1 *{
+display: inline-block;
+}
+.searchbox{
+    width: fit-content;
+    /* border: 1px solid rebeccapurple; */
+    position: absolute;
+    right: 5px;
+}
+
+.searchbox *{
+    height: 30px;
+}
+
+.searchbox input[type="search"]{
+    border-radius: 6px;
+    border: 2px solid #cccccc;
+}
+
+.searchbox input[type="search"]:hover{
+    border: 2px solid pink;
+}
+
+.searchbox button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #cccccc   ;
+}
+.searchbox button:hover{
+    cursor: pointer;
+    background-color: #e2dfdf;
+}
+
+.maininterface button{
+    height: 30px;
+    border: none;
+    /* border-radius: 10px; */
+    /* margin: 5px; */
+}
+
+
+
+.btnss{
+    display:inline-block;
+
+}
+.locationdropdown{
+    position: relative;
+}
+
+.btnss button{
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+.btnss button:hover{
+    cursor: pointer;
+    background-color: #e2dfdf;
+}
+
+.locationdropdown-content{
+    position: absolute;
+    /* display: none; */
+    display: flex;
+    width: 78vw;
+    margin: 5px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* border: 1px solid rebeccapurple; */
+    background-color: #F2F2F2;
+    box-shadow: 5px 5px 18px gray;
+    /* background-color: transparent; */
+    z-index: 1;
+    
+}
+
+.categoriesdropdown{
+    /* position: relative; */
+}
+
+.categoriesdropdown-content{
+    left: 4px;
+    position: absolute;
+    display: flex;
+    /* display: none; */
+    width: 78vw;
+    margin: 5px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* border: 1px solid rebeccapurple; */
+    background-color: #F2F2F2;
+    box-shadow: 5px 5px 18px gray;
+    z-index: 1;
+    /* background-color: transparent; */
+
+}
+
+.alllocations{
+    /* width: fit-content; */
+    /* box-sizing: border-box;
+    width: 25px; */
+    height: 25px;
+    margin: 10px;
+    padding: 5px;
+    /* border: 1px solid rebeccapurple; */
+    border-radius: 10px;
+    /* color: blue; */
+    border: none;
+}
+
+
+.alllocations:hover{
+    background-color: #e2dfdf;
+    cursor: pointer;
+}
+
+.cards .card a{
+    display: block;
+    height: 100%;
+    width: 100%;
+}

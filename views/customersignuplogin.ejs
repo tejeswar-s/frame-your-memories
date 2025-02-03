@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login/Signup</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="customersignuplogin.css">
+</head>
+
+<body>
+
+	<h1 style="color: #f9f6f6;">CUSTOMER LOGIN/SIGNUP</h1>
+	<p style="color: red;" class="accountexsist">
+		<%= alreadyexists %>
+	</p>
+	<p style="color: red;" class="wrongPassword">
+		<%= wrongPassword%>
+	</p>
+	<div data-id="box1" class="maincontain">
+		<div class="photobtn">
+			<div data-id="box1" class="btnss" id="box-3">
+				<button data-id="box1">Login</button>
+			</div>
+			<div data-id="box2" class="btnss" id="box-4">
+				<button data-id="box2">Sign In</button>
+			</div>
+		</div>
+
+		<div class="subcont">
+			<div class="acontent" style="z-index: 1;" data-id="box1" id="box-1">
+				<form action="/customerlogindetails" method="post">
+					<h1 style="font-size: 40px;">Login</h1>
+					<input type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+						name="myMail" required />
+					<input type="password" placeholder="Password" name="myPassword" required />
+					<a style="color: grey;" href="#">Forgot your password?</a>
+
+					<button type="submit">Login</button>
+				</form> 
+			</div>
+			<div class="acontent" style="opacity: 0;" data-id="box2" id="box-2">
+
+				<form action="/customersignupdetails" method="post">
+					<h1>Create Account</h1>
+					<input type="text" placeholder="Name" name="myName" required />
+
+					<input type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+						name="myMail" required />
+					<input type="password" placeholder="Password" name="myPassword" required />
+					<button type="submit">Sign Up</button>
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+	<script src="signuplogin.js"></script>
+
+</body>
+
+</html>

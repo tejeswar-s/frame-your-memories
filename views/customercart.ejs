@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,600&display=swap');
+
+        * {
+            margin: 5px;
+            border: 0;
+            font-family: "Poppins";
+            padding: 0;
+        }
+
+        body {
+            background-image: url('/images/cart.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            object-fit: cover;
+            background-size: 100% 100%;
+        }
+
+        .frame {
+            margin-left: 150px;
+            align-items: center;
+            width: 1000px;
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+
+        }
+
+        /* .MainContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+    width: 100%;
+} */
+
+        .cardContainer {
+            width: 800px;
+            height:600px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(100deg, rgb(205, 217, 224), rgb(234, 234, 217));
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3);
+            transition: .4s;
+            border-radius: 25px;
+            padding: 5px;
+        }
+
+        .cardContainer:hover {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            transform: translate(0px, -8px);
+        }
+
+        .cardContainer h1 {
+            font-size: 25px;
+            font-weight: 1800;
+            /* padding: 10px; */
+        }
+
+        .cardContainer button {
+            width: 90%;
+            background: linear-gradient(45deg, rgb(236, 188, 169), rgb(224, 152, 190));
+            margin-top: 20px;
+            padding: 10px;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+            transition: .2s linear;
+        }
+
+        .cardContainer button :hover {
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
+
+        .cardContainer .details {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            padding: 30px 30px;
+            width: 600px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .tophead {
+            display: flex;
+            flex-direction: row;
+            align-items: relative;
+        }
+
+        .tophead h1 {
+            margin-left: 15%;
+        }
+
+        .tophead h1:hover {
+            letter-spacing: 2px;
+        }
+
+        i.button {
+            position: absolute;
+            top: 5%;
+            transform: translateY(-50%);
+            height: 36px;
+            width: 36px;
+            background-color: #343f4f;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            color: #fff;
+            font-size: 15px;
+            transition: all 0.3s linear;
+            z-index: 100;
+            cursor: pointer;
+            margin-left: 3%;
+        }
+
+        i.button:active {
+            transform: scale(0.94) translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="frame">
+        <div class="tophead">
+            <a href="/mypage2"><i class="fa-solid fa-arrow-left button" id="prev"></i></a>
+            <h1 style="color:#0a0a0a">My Cart</h1>
+        </div>
+
+        <% if(products.length>0){ %>
+
+            <div class="MainContainer">
+                <% products.forEach(product=>{ %>
+                    <div class="cardContainer">
+                        <div class="details">
+                            <h1><b>
+                                <p>
+                                    Product Name : <%=product.pname %>
+                                </p>
+                            </b></h1>
+                            <p>
+                                <b>Category</b> :<%=product.catagory %>
+                            </p>
+                            <p>
+                                <b>Sub-Category</b> :<%=product.subcatagory %>
+                            </p>
+                            <p>
+                                <b>Availability :</b>
+                                <% if(product.pavailability==1){ %>
+                                    Available
+                                    <% }else{ %>
+                                        Not Available
+                                    <% } %>
+                            </p>
+                            <p>
+                                <b>Price :</b><%=product.pbudget %>
+                            </p>
+                            <p>
+                                <b>Discount :</b><%=product.pdiscount %> % Discount
+                            </p>
+                            <p>
+                                <b>Description :</b><%=product.pdescription %>
+                            </p>
+                            <a href="/Final-payment1/<%=product._id%>"><button>Final Payment</button></a>
+                        </div>
+                        
+                    </div>
+            </div>
+            <% }) %>
+    </div>
+
+    <% }else{ %>
+        <div>
+            <img src="images/emptycart.png" alt="Empty cart">
+        </div>
+        <% } %>
+
+            </div>
+
+</body>
+
+</html>
